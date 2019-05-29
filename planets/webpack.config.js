@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: 'planets.js',
     library: 'planets',
-    libraryTarget: 'amd',
+    libraryTarget: 'umd',
     path: path.resolve(__dirname, 'build/planets'),
   },
   mode: 'production',
@@ -35,7 +35,7 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new CleanWebpackPlugin(['build/planets']),
+    // new CleanWebpackPlugin(['build/planets']),
   ],
   devtool: 'source-map',
   externals: [

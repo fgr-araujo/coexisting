@@ -23,6 +23,7 @@ import PlanetList from './planet-list/planet-list.vue'
 import MaybeSelected from './selected-planet/maybe-selected.vue'
 import { getPlanets } from './utils/api.js'
 // import { find } from 'lodash'
+
 export default {
   data: () => ({
     planets: [],

@@ -1,5 +1,5 @@
 <template>
-  <div id='planets'>
+  <div>
     <button @click="clicked">Clicou</button>
     <pre>
       {{ numbers }}
