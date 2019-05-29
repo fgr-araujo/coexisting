@@ -8,10 +8,15 @@
 </template>
 
 <script>
+import fetchWithCache from '@portal/fetchWithCache'
+
 export default {
   props: {
     planet: Object
   },
+  mounted () {
+    console.log('ooo')
+  }
 }
 </script>
 

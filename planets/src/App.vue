@@ -11,11 +11,16 @@
 </template>
 
 <script>
+import { TestCommunication } from '@portal/fetchWithCache'
+
 export default {
   data () {
     return {
       numbers: 0
     }
+  },
+  mounted () {
+    console.log(TestCommunication())
   },
   methods: {
     clicked () {
