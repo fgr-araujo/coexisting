@@ -10,12 +10,11 @@
     <script type="systemjs-importmap">
       {
         "imports": {
+          "planets": "http://localhost:8237/planets.js",
           "app1": "http://localhost:4201/main.js",
           "app2": "http://localhost:4202/main.js",
           "navbar": "http://localhost:4203/main.js",
-          "single-spa": "https://unpkg.com/single-spa@4.3.2/lib/system/single-spa.min.js",
-          "main-menu": "http://localhost:8237/planets.js",
-          "@portal/fetchWithCache": "http://localhost:8238/fetchWithCache.js"
+          "single-spa": "https://unpkg.com/single-spa@4.3.2/lib/system/single-spa.min.js"
         }
       }
     </script>
@@ -35,6 +34,12 @@
     <script>
       System.import('single-spa').then(function (singleSpa) {
         singleSpa.registerApplication(
+          'planets',
+          () => System.import('planets'),
+          location => true
+        )
+
+        singleSpa.registerApplication(
           'navbar',
           () => System.import('navbar'),
           location => true
@@ -50,12 +55,6 @@
           'app2',
           () => System.import('app2'),
           location => location.pathname.startsWith('/app2')
-        )
-
-        singleSpa.registerApplication(
-          'main-menu',
-          () => System.import('main-menu'),
-          location => true
         )
 
         singleSpa.start();
