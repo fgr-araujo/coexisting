@@ -1,0 +1,26 @@
+<template>
+  <div id='planets'>
+    <button @click="clicked">Clicou</button>
+    <pre>
+      {{ numbers }}
+    </pre>
+    <transition name="fade" mode="out-in">
+      <router-view class="view"></router-view>
+    </transition>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      numbers: 0
+    }
+  },
+  methods: {
+    clicked () {
+      this.numbers++
+    }
+  }
+}
+</script>
