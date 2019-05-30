@@ -140,13 +140,18 @@ export default {
     this.checkObservable()
   },
   methods: {
-    checkObservable() {},
-    doFilter () {
-      const param = {
-        id: '',
-        status: true,
-        name: ''
-      }
+    checkObservable() {
+      Observables.filterFields.subscribe((filter) => {
+        console.log('...', filter)
+        this.doFilter(filter)
+      })
+    },
+    doFilter (param) {
+      // const param = {
+      //   id: '',
+      //   status: true,
+      //   name: ''
+      // }
 
       this.filtrar(param)
     },

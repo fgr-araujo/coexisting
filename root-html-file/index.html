@@ -12,8 +12,6 @@
         "imports": {
           "planets": "http://localhost:8237/planets.js",
           "filter": "http://localhost:8235/filtros.js",
-          "app1": "http://localhost:4201/main.js",
-          "app2": "http://localhost:4202/main.js",
           "navbar": "http://localhost:4203/main.js",
           "single-spa": "https://unpkg.com/single-spa@4.3.2/lib/system/single-spa.min.js",
           "@portal/fetchWithCache": "http://localhost:8238/fetchWithCache.js"
@@ -31,11 +29,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.2/rxjs.umd.min.js"></script>
   </head>
   <body>
-    <div id='planets'>
-    </div>
+    <div id="single-spa-application:navbar"></div>
+    
+    <div id="navbar"></div>
+    
+    <div id='planets'></div>
+
+
 
     <script>
       System.import('single-spa').then(function (singleSpa) {
+        singleSpa.registerApplication(
+          'navbar',
+          () => System.import('navbar'),
+          location => true
+        )
+
         singleSpa.registerApplication(
           'filter',
           () => System.import('filter'),
@@ -48,23 +57,6 @@
           location => true
         )
 
-        singleSpa.registerApplication(
-          'navbar',
-          () => System.import('navbar'),
-          location => true
-        )
-
-        singleSpa.registerApplication(
-          'app1',
-          () => System.import('app1'),
-          location => location.pathname.startsWith('/app1')
-        );
-
-        singleSpa.registerApplication(
-          'app2',
-          () => System.import('app2'),
-          location => location.pathname.startsWith('/app2')
-        )
 
         singleSpa.start();
       })
