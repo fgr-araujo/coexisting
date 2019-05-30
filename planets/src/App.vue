@@ -2,7 +2,6 @@
 
 <template>
   <div class="list">
-    <button @click="doFilter()">Filtrar</button>
     <table>
       <tr
         v-for="(empresa, idx) in empresas"
@@ -142,29 +141,20 @@ export default {
   methods: {
     checkObservable() {
       Observables.filterFields.subscribe((filter) => {
-        console.log('...', filter)
         this.doFilter(filter)
       })
     },
     doFilter (param) {
-      // const param = {
-      //   id: '',
-      //   status: true,
-      //   name: ''
-      // }
-
       this.filtrar(param)
     },
     filtrar(param) {
+      console.log(param)
       const filteredList = this.empresasMock.filter((item) => {
-
         // filtra por status
         if (item.attributes.ativa === param.status) { 
-          return item 
-        } else if (param.status === '') {
-          return this.empresasMock
+          return true
         }
-
+        return false
       })
 
       this.empresas = filteredList
