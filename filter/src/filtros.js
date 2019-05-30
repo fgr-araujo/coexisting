@@ -11,7 +11,6 @@ const reactLifecycles = singleSpaReact({
   domElementGetter
 })
 export function bootstrap(props) {
-  console.log(props.activePage());
   return reactLifecycles.bootstrap(props);
 }
 
@@ -21,7 +20,6 @@ export function mount(props) {
 }
 
 export function unmount(props) {
-  console.log(props.activePage());
   return reactLifecycles.unmount(props);
 }
 
