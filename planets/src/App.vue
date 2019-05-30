@@ -1,13 +1,24 @@
+<style src="./planet-style.css" lang="css"></style>
+
+
 <template>
-  <div>
+  <div class="list">
     <button @click="doFilter()">Filtrar</button>
-    <ul>
-      <li
+    <table>
+      <tr>
+        <th></th>
+      </tr>
+
+      <tr
         v-for="(empresa, idx) in empresas"
         :key="idx">
-        <a v-bind:href="empresa.links.self">{{ empresa.attributes.idExterno }} {{ empresa.attributes.nome }}</a>
-      </li>
-    </ul>
+
+        <td>{{ empresa.attributes.idExterno }}</td>
+        <td>{{ empresa.attributes.nome }}</td>
+        <td>{{ empresa.attributes.ativa }}</td>
+      </tr>
+    </table>
+    
   </div>
 </template>
 

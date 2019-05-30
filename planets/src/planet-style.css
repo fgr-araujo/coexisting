@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Droid Sans'), local('DroidSans'),
+        url('droid_sans_reguar-webfont.woff') format('woff');
+}
+*{
+    padding: 0;
+    font-family: 'Droid Sans', 'Open Sans', Helvetica, sans-serif;
+}
