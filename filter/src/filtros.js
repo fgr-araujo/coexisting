@@ -11,17 +11,17 @@ const reactLifecycles = singleSpaReact({
   domElementGetter
 })
 export function bootstrap(props) {
-  console.log(props.activePage());
+  console.log(singleSpa);
   return reactLifecycles.bootstrap(props);
 }
 
 export function mount(props) {
-  console.log(props.activePage());
+  // console.log(props.activePage());
   return reactLifecycles.mount(props);
 }
 
 export function unmount(props) {
-  console.log(props.activePage());
+  // console.log(props.activePage());
   return reactLifecycles.unmount(props);
 }
 
@@ -49,9 +49,9 @@ function domElementGetter() {
   return el;
 }
 
-window.addEventListener('single-spa:app-change', evt => {
-  var activeModules = Array.from(singleSpa.getMountedApps());
-  activeModules.forEach(function(opt){
-    console.log(opt);
-  })
-})
+// window.addEventListener('single-spa:app-change', evt => {
+//   var activeModules = Array.from(singleSpa.getMountedApps());
+//   activeModules.forEach(function(opt){
+//     console.log(opt);
+//   })
+// })

@@ -11,6 +11,7 @@
       {
         "imports": {
           "planets": "http://localhost:8237/planets.js",
+          "filter": "http://localhost:8235/filtros.js",
           "app1": "http://localhost:4201/main.js",
           "app2": "http://localhost:4202/main.js",
           "navbar": "http://localhost:4203/main.js",
@@ -33,6 +34,12 @@
 
     <script>
       System.import('single-spa').then(function (singleSpa) {
+        singleSpa.registerApplication(
+          'filter',
+          () => System.import('filter'),
+          location => true
+        )
+
         singleSpa.registerApplication(
           'planets',
           () => System.import('planets'),

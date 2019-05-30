@@ -86,10 +86,10 @@ module.exports = {
   externals: [
     /^lodash$/,
     /^single-spa$/,
-    /^react$/,
-    /^react\/lib.*/,
-    /^react-dom$/,
-    /.*react-dom.*/,
+    // /^react$/,
+    // /^react\/lib.*/,
+    // /^react-dom$/,
+    // /.*react-dom.*/,
     /^rxjs\/?.*$/,
   ],
 };
