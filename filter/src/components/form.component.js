@@ -3,7 +3,7 @@ import { Observables } from '@portal/fetchWithCache'
 
 export class FiltroForm extends React.Component {
   state = {
-    estados: ["Todas", "Ativa", "Pendente", "Cancelada"],
+    estados: ["Todas", "Ativo", "Inativo"],
     status: "Todas",
     keyword: "",
     register: "",
@@ -15,7 +15,7 @@ export class FiltroForm extends React.Component {
     event.preventDefault();
     const filter = {
       id: this.state.filter.register,
-      status: this.state.status,
+      status: this.state.status === 'Ativo',
       name: this.state.keyword
     }
     Observables.filterFields.next(filter)
