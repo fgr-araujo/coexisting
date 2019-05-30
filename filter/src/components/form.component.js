@@ -1,4 +1,6 @@
 import React from 'react'
+import { Observables } from '@portal/fetchWithCache'
+
 export class FiltroForm extends React.Component {
   state = {
     estados: ["Todas", "Ativa", "Pendente", "Cancelada"],
@@ -7,6 +9,12 @@ export class FiltroForm extends React.Component {
     register: "",
     filter: {status: "",keyword: "",register:""},
     handleSubmit: this.handleSubmit.bind(this),
+  }
+
+  componentWillMount() {
+    Observables.filterList.subscribe((v) => {
+      console.log('--', v)
+    })
   }
 
   handleSubmit(event) {
