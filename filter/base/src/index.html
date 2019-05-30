@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+  </head>
+  <body>
+
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "@portal/config": "http://localhost:8233/config.js",
+          "@portal/filtros": "http://localhost:8235/filtros.js",
+          "@portal/fetchWithCache": "http://localhost:8238/fetchWithCache.js"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src='https://unpkg.com/systemjs@3.1.2/dist/system.js'></script>
+    <script src='https://unpkg.com/systemjs@3.1.2/dist/extras/amd.js'></script>
+    <script src='https://unpkg.com/systemjs@3.1.2/dist/extras/named-exports.js'></script>
+
+    <!-- Load the common deps-->
+    <script src="http://localhost:8234/common-deps.js"></script>
+
+    <!-- Load the application -->
+    <script>
+      System.import('@portal/config')
+    </script>
+
+    <!-- Static navbar -->
+    <link rel="stylesheet" href="http://localhost:8233/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <div id='navbar'>
+    </div>
+    <div id='planets'>
+    </div>
+    <div id='angular'>
+    </div>
+
+  </body>
+</html>

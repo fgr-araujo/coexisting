@@ -1,7 +1,8 @@
 import React from 'react'
+import './form-style.css'
 export class FiltroForm extends React.Component {
   state = {
-    estados: ["Todas", "Ativa", "Pendente", "Cancelada"],
+    estados: ["Todas", "Ativo", "Pendente", "Cancelada"],
     status: "Todas",
     keyword: "",
     register: "",
@@ -24,7 +25,7 @@ export class FiltroForm extends React.Component {
     return (
       <form onSubmit={this.state.handleSubmit}>
         <label>
-          Status: 
+          Status  
           <select
             defaultValue={this.state.status} 
             ref="status" 
@@ -32,23 +33,27 @@ export class FiltroForm extends React.Component {
               {options}
           </select>
         </label>
-        <input
-          type="text"
-          onChange={(keyword) => this.setState({ keyword:keyword.target.value }) }
-          value={this.state.keyword}
-          ref="keyword"
-          placeholder="Procure pelo nome da empresa"
-          title="Digite o que deseja buscar."/>
 
         <input 
           type="text" 
           onChange={(register) => this.setState({ register:register.target.value }) }
           value={this.state.register}
           ref="register" 
-          placeholder="Busque pelo CNPJ." 
+          placeholder="CNPJ" 
           title="Pesquise pelo CNPJ da empresa."/>
 
-        <input type="submit" value="Buscar" />
+        <input
+          type="text"
+          onChange={(keyword) => this.setState({ keyword:keyword.target.value }) }
+          value={this.state.keyword}
+          ref="keyword"
+          placeholder="Pesquisar por nome da empresa"
+          title="Digite o que deseja buscar."/>
+
+        
+
+        <button type="submit" value="Filtrar"><i class="fas fa-search"></i> Filtrar</button>
+        {/* <input type="submit" value="Buscar" /> */}
       </form>
     );
   }
