@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { TestCommunication } from '@portal/fetchWithCache'
+import { tst } from '@portal/fetchWithCache'
 
 export default {
   data () {
@@ -20,11 +20,17 @@ export default {
     }
   },
   mounted () {
-    console.log(TestCommunication())
+    this.checkObservable()
   },
   methods: {
     clicked () {
       this.numbers++
+    },
+    checkObservable() {
+      tst.subscribe((v) => {
+        console.log('ok', v)
+        this.numbers = v
+      })
     }
   }
 }
