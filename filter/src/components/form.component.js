@@ -11,16 +11,16 @@ export class FiltroForm extends React.Component {
     handleSubmit: this.handleSubmit.bind(this),
   }
 
-  componentWillMount() {
-    Observables.filterList.subscribe((v) => {
-      console.log('--', v)
-    })
-  }
-
   handleSubmit(event) {
     event.preventDefault();
+    const filter = {
+      id: this.state.filter.register,
+      status: this.state.status,
+      name: this.state.keyword
+    }
+    Observables.filterFields.next(filter)
     this.setState({filter: {status: this.state.status, keyword: this.state.keyword, register: this.state.register}}, function() {
-      console.log(this.state.filter)
+      
     }.bind(this));
   }
 
