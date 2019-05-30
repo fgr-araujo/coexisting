@@ -4,7 +4,7 @@ export class FiltroForm extends React.Component {
     status: null,
     name: "",
     id: "",
-    filter: {id: "",name: "",status:null},
+    filter: {name: "",status:null , id: ""},
     handleSubmit: this.handleSubmit.bind(this),
   }
 
@@ -18,7 +18,7 @@ export class FiltroForm extends React.Component {
     } else {
       toBoolean = null;
     }
-    this.setState({filter: {status: toBoolean, name: this.state.name, id: this.state.id}}, function() {
+    this.setState({filter: {name: this.state.name, status: toBoolean, id: this.state.id}}, function() {
       const filter = this.state.filter;
       console.log(filter);
     }.bind(this));
