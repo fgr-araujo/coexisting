@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import { tst } from '@portal/fetchWithCache'
+import { of } from 'rxjs'
+import { Observables } from '@portal/fetchWithCache'
 
 export default {
   data () {
@@ -25,12 +26,14 @@ export default {
   methods: {
     clicked () {
       this.numbers++
+      Observables.filterList.next(2)
     },
     checkObservable() {
-      tst.subscribe((v) => {
-        console.log('ok', v)
-        this.numbers = v
-      })
+      // Observables.filterList = of(2)
+      // tst.subscribe((v) => {
+      //   console.log('ok', v)
+      //   this.numbers = v
+      // })
     }
   }
 }
