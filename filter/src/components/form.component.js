@@ -6,9 +6,6 @@ export class FiltroForm extends React.Component {
     keyword: "",
     register: "",
     filter: {status: "",keyword: "",register:""},
-    statusChange: this.statusChange.bind(this),
-    // keywordChange: '', this.keywordChange.bind(this),
-    registerChange: this.registerChange.bind(this),
     handleSubmit: this.handleSubmit.bind(this),
   }
 
@@ -19,23 +16,6 @@ export class FiltroForm extends React.Component {
     }.bind(this));
   }
 
-  statusChange(event) {
-    this.setState({status: event.target.value}, function(){
-      console.log(this.state.status);
-    }.bind(this));
-  }
-  // keywordChange(event) {
-  //   this.setState({keyword: event.target.value}, function(){
-  //     console.log(this.state.keyword);
-  //   }.bind(this));
-  // }
-  registerChange(event) {
-    this.setState({register: event.target.value}, function(){
-      console.log(this.state.register);
-    }.bind(this));
-  }
-  
-
   render() {
     const options = []
     for (const [index, value] of this.state.estados.entries()) {
@@ -43,13 +23,13 @@ export class FiltroForm extends React.Component {
     }
     return (
       <form onSubmit={this.state.handleSubmit}>
-        <span>
-          {this.state.keyword}
-        </span>
         <label>
-          Qual o status da empresa?
-          <select defaultValue={this.state.status} ref="status" onChange={this.state.statusChange}>
-            {options}
+          Status: 
+          <select
+            defaultValue={this.state.status} 
+            ref="status" 
+            onChange={(status) => this.setState({ status:status.target.value }) }>
+              {options}
           </select>
         </label>
         <input
@@ -60,26 +40,16 @@ export class FiltroForm extends React.Component {
           placeholder="Procure pelo nome da empresa"
           title="Digite o que deseja buscar."/>
 
-        <input type="text" onChange={this.state.registerChange} ref="register" placeholder="Busque pelo CNPJ." title="Pesquise pelo CNPJ da empresa." defaultValue={this.state.register}/>
+        <input 
+          type="text" 
+          onChange={(register) => this.setState({ register:register.target.value }) }
+          value={this.state.register}
+          ref="register" 
+          placeholder="Busque pelo CNPJ." 
+          title="Pesquise pelo CNPJ da empresa."/>
 
         <input type="submit" value="Buscar" />
       </form>
     );
   }
 }
-
-/*
-<input type="date" onChange={this.state.dateChange} ref="date" placeholder="DD/MM/AAAA" title="Digite a data que deseja pesquisar." defaultValue={this.state.date}/>
-
-dateChange(event) {
-  this.setState({date: event.target.value}, function(){
-    console.log(this.state.date);
-  }.bind(this));
-}
-
-date: this.state.date
-
-dateChange: this.dateChange.bind(this),
-
-date: ""
-*/
