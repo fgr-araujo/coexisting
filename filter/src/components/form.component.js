@@ -19,7 +19,8 @@ export class FiltroForm extends React.Component {
       toBoolean = null;
     }
     this.setState({filter: {status: toBoolean, name: this.state.name, id: this.state.id}}, function() {
-      console.log(this.state.filter)
+      const filter = this.state.filter;
+      console.log(filter);
     }.bind(this));
   }
 
