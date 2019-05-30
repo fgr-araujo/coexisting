@@ -1,24 +1,21 @@
 <style src="./planet-style.css" lang="css"></style>
 
-
 <template>
   <div class="list">
     <button @click="doFilter()">Filtrar</button>
     <table>
-      <tr>
-        <th></th>
-      </tr>
-
       <tr
         v-for="(empresa, idx) in empresas"
         :key="idx">
 
-        <td>{{ empresa.attributes.idExterno }}</td>
-        <td>{{ empresa.attributes.nome }}</td>
-        <td>{{ empresa.attributes.ativa }}</td>
+        <td><i class="fas fa-home"></i> {{ empresa.attributes.idExterno }}</td>
+        <td>{{ empresa.attributes.nome }} <i class="fas fa-users"></i></td>
+        <td>
+          <i class="fas fa-check" v-if="empresa.attributes.ativa"></i>
+          <i class="fas fa-times" v-if="!empresa.attributes.ativa"></i>
+        </td>
       </tr>
     </table>
-    
   </div>
 </template>
 
