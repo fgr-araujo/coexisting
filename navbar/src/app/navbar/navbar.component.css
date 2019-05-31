@@ -171,3 +171,6 @@ nav .container{
     border: 1px solid #ccc;
     color: #000;
 }
+.buttons button:nth-of-type(2) i{
+    color: #000;
+}
