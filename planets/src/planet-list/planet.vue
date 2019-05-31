@@ -12,6 +12,9 @@ export default {
   props: {
     planet: Object
   },
+  mounted () {
+    console.log('ooo')
+  }
 }
 </script>
 

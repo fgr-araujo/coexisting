@@ -9,6 +9,7 @@
   "author": "Justin McMurdie",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "rxjs": "^6.3.3",
     "single-spa-vue": "^1.4.0",

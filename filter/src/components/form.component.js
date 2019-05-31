@@ -1,4 +1,7 @@
 import React from 'react'
+import { Observables } from '@portal/fetchWithCache'
+import './form-style.css'
+
 export class FiltroForm extends React.Component {
   state = {
     status: null,
@@ -26,6 +29,7 @@ export class FiltroForm extends React.Component {
       }}, 
       function() {
         const filter = this.state.filter;
+        Observables.filterFields.next(filter)
         console.log(filter);
       }.bind(this)
     );

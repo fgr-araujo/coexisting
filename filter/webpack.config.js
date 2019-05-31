@@ -86,6 +86,7 @@ module.exports = {
   externals: [
     /^lodash$/,
     /^single-spa$/,
+    /^@portal\/*/,
     // /^react$/,
     // /^react\/lib.*/,
     // /^react-dom$/,
