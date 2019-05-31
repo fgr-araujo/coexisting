@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server --config ./webpack.dev.js --port 8238"
+    "serve": "webpack-dev-server --config ./webpack.dev.js --port 8238 --host 0.0.0.0 --disable-host-check"
   },
   "author": "",
   "license": "ISC",
