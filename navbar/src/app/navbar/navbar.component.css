@@ -88,7 +88,7 @@ nav .container{
 .dropdown-item{
     position: absolute;
     left: 0px;
-    top: 45px;
+    top: 50px;
     display: none;
     width: 150px;
     background-color: #fff;
