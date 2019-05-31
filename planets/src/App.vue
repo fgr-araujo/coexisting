@@ -191,8 +191,6 @@ export default {
           }
         }
 
-        console.log('-->', isFilteredOk)
-
         return isFilteredOk.indexOf(false) === -1
       })
 
