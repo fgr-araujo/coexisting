@@ -88,7 +88,7 @@ nav .container{
 .dropdown-item{
     position: absolute;
     left: 0px;
-    top: 45px;
+    top: 100%;
     display: none;
     width: 150px;
     background-color: #fff;
@@ -169,5 +169,8 @@ nav .container{
 .buttons button:nth-of-type(2){
     background-color: #fff;
     border: 1px solid #ccc;
+    color: #000;
+}
+.buttons button:nth-of-type(2) i{
     color: #000;
 }

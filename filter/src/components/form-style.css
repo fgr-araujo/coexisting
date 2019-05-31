@@ -17,7 +17,7 @@ form {
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
-    margin:20px auto;
+    margin: 50px auto;
     flex-wrap: wrap
 }
 form > * {
