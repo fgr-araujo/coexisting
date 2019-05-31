@@ -33,6 +33,9 @@ td:nth-child(2){
     padding-left: 10px;
     text-align: left;
 }
+td:nth-child(3){
+    padding: 0px 5px;
+}
 td:hover{
     color: #A82339;
     cursor: pointer;
