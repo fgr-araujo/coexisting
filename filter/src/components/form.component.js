@@ -18,10 +18,17 @@ export class FiltroForm extends React.Component {
     } else {
       toBoolean = null;
     }
-    this.setState({filter: {name: this.state.name, status: toBoolean, id: this.state.id}}, function() {
-      const filter = this.state.filter;
-      console.log(filter);
-    }.bind(this));
+    this.setState({ 
+      filter: {
+        name: this.state.name, 
+        status: toBoolean, 
+        id: this.state.id
+      }}, 
+      function() {
+        const filter = this.state.filter;
+        console.log(filter);
+      }.bind(this)
+    );
   }
 
   render() {
@@ -33,9 +40,9 @@ export class FiltroForm extends React.Component {
             defaultValue={this.state.status} 
             ref="status" 
             onChange={(status) => this.setState({ status:status.target.value }) }>
-              <option value="null">Todas</option>
-              <option value="true">Ativo</option>
-              <option value="false">Desativo</option>
+              <option value="null">TODAS</option>
+              <option value="true">ATIVO</option>
+              <option value="false">INATIVO</option>
           </select>
         </label>
         <input
