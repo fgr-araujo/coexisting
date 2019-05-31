@@ -140,11 +140,6 @@ export default {
   },
   methods: {
     doFilter (filter) {
-      /* const param = {
-        id: "00007",
-        status: null,
-        name: "Wil"
-      } */
       this.filtrar(filter)
     },
     checkObservable() {
@@ -190,9 +185,6 @@ export default {
             isFilteredOk.push(false)
           }
         }
-
-        console.log('-->', isFilteredOk)
-
         return isFilteredOk.indexOf(false) === -1
       })
 

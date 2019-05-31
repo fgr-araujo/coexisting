@@ -64,9 +64,7 @@ export class FiltroForm extends React.Component {
           ref="id" 
           placeholder="Procure pelo ID"
           title="Digite o ID para buscar."/>
-
-        <button type="submit" value="Filtrar"><i className={"fas fa-search"}></i> Filtrar</button>
-        {/* <input type="submit" value="Buscar" /> */}
+        <button type="submit" value="Filtrar"><i className="fas fa-search"></i> Filtrar</button>
       </form>
     );
   }
