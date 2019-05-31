@@ -1,0 +1,83 @@
+/* @font-face {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Droid Sans'), local('DroidSans'),
+        url('droid_sans_reguar-webfont.woff') format('woff');
+} */
+*{
+    padding: 0;
+    font-family: 'Droid Sans', 'Open Sans', Helvetica, sans-serif;
+}
+form {
+    margin:0 auto;
+    width: calc(100% + 20px);
+    max-width: 1060px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    margin:20px auto;
+    flex-wrap: wrap
+}
+form > * {
+    margin:0 10px;
+}
+label{
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+input, select{
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #555555;
+    font-size: 13px;
+    outline: none;
+    padding: 0 10px;
+}
+select{
+    width: 165px;
+    padding: 0 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+select option:hover{
+    background-color: #A82339;
+    color: #fff;
+}
+input:nth-of-type(1){
+    flex:1;
+}
+input:nth-of-type(2){
+    margin-right: 0px;
+    border-radius: 5px 0px 0px 5px;
+}
+button{
+    width: 75px;
+    height: 37px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #A82339;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+button i{
+    color: #fff;
+    margin: 5px 0px;
+}
+
+input[type="submit"]{
+    width: 75px;
+    height: 37px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #A82339;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 0;
+}
