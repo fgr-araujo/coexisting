@@ -1,17 +1,26 @@
+<style src="./planet-style.css" lang="css"></style>
+
 <template>
-  <div>
-    <button @click="doFilter()">Filtrar</button>
-    <ul>
-      <li
+  <div class="list">
+    <table>
+      <tr
         v-for="(empresa, idx) in empresas"
         :key="idx">
-        <a v-bind:href="empresa.links.self">{{ empresa.attributes.idExterno }} {{ empresa.attributes.nome }}</a>
-      </li>
-    </ul>
+
+        <td><i class="fas fa-home"></i> {{ empresa.attributes.idExterno }}</td>
+        <td>{{ empresa.attributes.nome }} <i class="fas fa-users"></i></td>
+        <td>
+          <i class="fas fa-check" v-if="empresa.attributes.ativa"></i>
+          <i class="fas fa-times" v-if="!empresa.attributes.ativa"></i>
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
+import { of } from 'rxjs'
+import { Observables } from '@portal/fetchWithCache'
 
 export default {
   data () {
@@ -127,17 +136,21 @@ export default {
   },
   mounted () {
     this.empresas = this.empresasMock
+    this.checkObservable()
   },
   methods: {
-    doFilter () {
-      const param = {
+    doFilter (filter) {
+      /* const param = {
         id: "00007",
         status: null,
         name: "Wil"
-      }
-
-      this.filtrar(param)
-
+      } */
+      this.filtrar(filter)
+    },
+    checkObservable() {
+      Observables.filterFields.subscribe((filter) => {
+        this.doFilter(filter)
+      })
     },
     filtrar(param) {
 

@@ -1,23 +1,28 @@
 {
-  "name": "fetchWithCache",
+  "name": "filtro",
   "version": "1.0.0",
-  "description": "",
+  "description": "micro serviço de filtro",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server --config ./webpack.dev.js --port 8238"
+    "serve": "webpack-dev-server --config ./webpack.dev.js --port 8235",
+    "start": "cd ./ && serve --port 8235"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "0.18.0",
-    "rxjs": "^6.5.2"
+    "@reach/router": "1.2.1",
+    "kremling": "1.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router": "4.3.1",
+    "single-spa-react": "2.8.1"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0",
-    "@babel/plugin-proposal-class-properties": "7.0.0",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "7.0.0",
     "@babel/plugin-syntax-dynamic-import": "7.0.0",
-    "@babel/preset-env": "7.0.0",
+    "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "7.0.0",
     "autoprefixer": "9.1.5",
     "babel-core": "6.26.3",

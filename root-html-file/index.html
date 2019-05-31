@@ -11,14 +11,14 @@
       {
         "imports": {
           "planets": "http://localhost:8237/planets.js",
-          "app1": "http://localhost:4201/main.js",
-          "app2": "http://localhost:4202/main.js",
+          "filter": "http://localhost:8235/filtros.js",
           "navbar": "http://localhost:4203/main.js",
           "single-spa": "https://unpkg.com/single-spa@4.3.2/lib/system/single-spa.min.js",
           "@portal/fetchWithCache": "http://localhost:8238/fetchWithCache.js"
         }
       }
     </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="preload" href="https://unpkg.com/single-spa@4.3.2/lib/system/single-spa.min.js" as="script" crossorigin="anonymous" />
     <script src="https://unpkg.com/zone.js"></script>
     <script src="https://unpkg.com/import-map-overrides@1.5.0/dist/import-map-overrides.js"></script>
@@ -29,17 +29,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.2/rxjs.umd.min.js"></script>
   </head>
   <body>
-    <div id='planets'>
-    </div>
+    <div id="single-spa-application:navbar"></div>
+    
+    <div id="navbar"></div>
+    
+    <div id='planets'></div>
+
+
 
     <script>
       System.import('single-spa').then(function (singleSpa) {
-        singleSpa.registerApplication(
-          'planets',
-          () => System.import('planets'),
-          location => true
-        )
-
         singleSpa.registerApplication(
           'navbar',
           () => System.import('navbar'),
@@ -47,16 +46,17 @@
         )
 
         singleSpa.registerApplication(
-          'app1',
-          () => System.import('app1'),
-          location => location.pathname.startsWith('/app1')
-        );
+          'filter',
+          () => System.import('filter'),
+          location => true
+        )
 
         singleSpa.registerApplication(
-          'app2',
-          () => System.import('app2'),
-          location => location.pathname.startsWith('/app2')
+          'planets',
+          () => System.import('planets'),
+          location => true
         )
+
 
         singleSpa.start();
       })

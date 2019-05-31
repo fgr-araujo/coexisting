@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Droid Sans'), local('DroidSans'),
+        url('droid_sans_reguar-webfont.woff') format('woff');
+}
+/* @font-face {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Droid Sans Bold'), local('DroidSans-Bold'),
+        url('./fonts/droid_sans_bold-webfont.woff') format('woff');
+} */
+
+*{
+    padding: 0;
+    font-family: 'Droid Sans', Helvetica, sans-serif;
+}
+.float-left{
+    float: left;
+}
+.float-rigth{
+    float: right;
+}
+nav {
+    width: 100%;
+    height: 50px;
+    background: #A82339;
+}
+nav .container{
+    width: 1140px;
+    height: 100%;
+    margin: auto
+}
+.container img{
+    display: inline;
+}
+.navbar{
+    width: 835px;
+    height: 100%;
+    display: inline;
+}
+.navbar-ul, .icons-ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.dropdown{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+    padding: 5px;
+    text-decoration: none;
+    list-style: none;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+.dropdown:first-child{
+    margin: 0px 30px;
+}
+.dropdown:hover{
+    background-color: #971f33;
+}
+.dropdown:hover a{
+    color: #FFF;
+}
+.dropdown a{
+    color: #DBDBDB;
+}
+.dropdown:hover .dropdown-item {
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown:nth-of-type(2) .dropdown-item{
+    width: 175px;
+}
+.dropdown:nth-of-type(3) .dropdown-item{
+    width: 226px;
+}
+.dropdown:nth-of-type(6) .dropdown-item{
+    width: 215px;
+}
+.dropdown-item{
+    position: absolute;
+    left: 0px;
+    top: 45px;
+    display: none;
+    width: 150px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top: none;
+    border-radius: 0px 0px 4px 4px;
+}
+.dropdown-item li{
+    margin: 8px 20px;
+    text-decoration: none;
+    list-style: none;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+}
+.icons{
+    width: auto;
+    height: 100%;
+}
+.icons .fas24{
+    font-size: 24px;
+}
+.icons .fa-sort-down{
+    margin-left: 2px;
+}
+.icons .dropdown{
+    margin: 0px;
+}
+.icons .dropdown:nth-of-type(3) .dropdown-item{
+    width: 360px;
+    height: 190px;
+}
+.icons .dropdown-item{
+    right: 0 !important;
+    left: inherit;
+    top: 50px;
+}
+.icons .dropdown:first-child .dropdown-item{
+    width: 200px;
+    float: right;
+}
+.icons .dropdown:nth-of-type(3) .dropdown-item{
+    padding: 15px;
+}
+.icons .dropdown:nth-of-type(3) .dropdown-item li{
+    width: 200px;
+    float: right;
+}
+.icons .dropdown-item img{
+    width: 90px;
+    height: 90px;
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.dropdown-item .title-name{
+    font-size: 21px;
+    font-weight: 500;
+}
+.dropdown-item .buttons{
+    width: 140px;
+    height: 35px;
+    margin: auto;
+}
+.buttons button{
+    width: 60px;
+    height: 35px;
+    margin: 15px 5px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.buttons button:first-child{
+    background-color: #A82339;
+    border: none;
+    color: #fff;
+}
+.buttons button:nth-of-type(2){
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #000;
+}
