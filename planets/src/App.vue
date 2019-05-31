@@ -131,27 +131,48 @@ export default {
   methods: {
     doFilter () {
       const param = {
-        id: '',
-        status: true,
-        name: ''
+        id: "00007",
+        status: null,
+        name: "Wil"
       }
 
       this.filtrar(param)
+
     },
     filtrar(param) {
+
       const filteredList = this.empresasMock.filter((item) => {
 
-        // filtra por status
-        if (item.attributes.ativa === param.status) { 
-          return item 
-        } else if (param.status === '') {
-          return this.empresasMock
+        let isFilteredOk = null
+
+        if ( param.id === '' && param.status === null && param.name === '') {
+          return true
         }
+
+        // filtra por status
+        if ( param.status !== null && (item.attributes.ativa === param.status)) { 
+          isFilteredOk = true
+        }
+
+        // filtra por id
+        if ( param.id !== '' && (item.attributes.idExterno === param.id && isFilteredOk !== false)) { 
+           isFilteredOk = true
+        }
+
+        // filtra por nome
+        const attributeName = item.attributes.nome.toUpperCase().indexOf(param.name.toUpperCase())
+
+        if (param.name !== '' && (attributeName > -1 && isFilteredOk !== false)) { 
+           isFilteredOk = true
+        }
+
+        return isFilteredOk 
 
       })
 
       this.empresas = filteredList
     }
+
   }
 }
 </script>
