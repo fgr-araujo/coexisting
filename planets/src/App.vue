@@ -156,31 +156,44 @@ export default {
 
       const filteredList = this.empresasMock.filter((item) => {
 
-        let isFilteredOk = null
+        let isFilteredOk = []
 
         if ( param.id === '' && param.status === null && param.name === '') {
           return true
         }
 
         // filtra por status
-        if ( param.status !== null && (item.attributes.ativa === param.status)) { 
-          isFilteredOk = true
+        if ( param.status !== null) {
+          if (item.attributes.ativa === param.status) { 
+            isFilteredOk.push(true)
+          } else {
+            isFilteredOk.push(false)
+          }
         }
 
         // filtra por id
-        if ( param.id !== '' && (item.attributes.idExterno === param.id && isFilteredOk !== false)) { 
-           isFilteredOk = true
+        if ( param.id !== '') {
+          if (item.attributes.idExterno === param.id) { 
+            isFilteredOk.push(true)
+          } else {
+            isFilteredOk.push(false)
+          }
         }
 
         // filtra por nome
         const attributeName = item.attributes.nome.toUpperCase().indexOf(param.name.toUpperCase())
 
-        if (param.name !== '' && (attributeName > -1 && isFilteredOk !== false)) { 
-           isFilteredOk = true
+        if (param.name !== '') {
+          if (attributeName > -1) { 
+            isFilteredOk.push(true)
+          } else {
+            isFilteredOk.push(false)
+          }
         }
 
-        return isFilteredOk 
+        console.log('-->', isFilteredOk)
 
+        return isFilteredOk.indexOf(false) === -1
       })
 
       this.empresas = filteredList
