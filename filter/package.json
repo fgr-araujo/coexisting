@@ -4,7 +4,7 @@
   "description": "micro serviço de filtro",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server --config ./webpack.dev.js --port 8235 --host 0.0.0.0",
+    "serve": "webpack-dev-server --config ./webpack.dev.js --port 8235 --disable-host-check --host 0.0.0.0",
     "start": "cd ./ && serve --port 8235"
   },
   "author": "",

@@ -4,7 +4,7 @@
   "description": "A microservice about star wars planets",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server --config ./webpack.dev.js --port 8237"
+    "serve": "webpack-dev-server --config ./webpack.dev.js --port 8237 --disable-host-check --host 0.0.0.0"
   },
   "author": "Justin McMurdie",
   "license": "ISC",
