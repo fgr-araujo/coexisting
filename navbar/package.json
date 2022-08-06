@@ -2,7 +2,7 @@
   "name": "navbar",
   "version": "0.0.0",
   "scripts": {
-    "serve": "ng serve --port 4203 --publicHost http://localhost:4203 --disable-host-check",
+    "serve": "ng serve --port 4203 --publicHost http://localhost:4203 --disable-host-check --host 0.0.0.0",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

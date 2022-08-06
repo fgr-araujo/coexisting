@@ -139,26 +139,58 @@ export default {
     this.checkObservable()
   },
   methods: {
+    doFilter (filter) {
+      this.filtrar(filter)
+    },
     checkObservable() {
       Observables.filterFields.subscribe((filter) => {
         this.doFilter(filter)
       })
     },
-    doFilter (param) {
-      this.filtrar(param)
-    },
     filtrar(param) {
-      console.log(param)
+
       const filteredList = this.empresasMock.filter((item) => {
-        // filtra por status
-        if (item.attributes.ativa === param.status) { 
+
+        let isFilteredOk = []
+
+        if ( param.id === '' && param.status === null && param.name === '') {
           return true
         }
-        return false
+
+        // filtra por status
+        if ( param.status !== null) {
+          if (item.attributes.ativa === param.status) { 
+            isFilteredOk.push(true)
+          } else {
+            isFilteredOk.push(false)
+          }
+        }
+
+        // filtra por id
+        if ( param.id !== '') {
+          if (item.attributes.idExterno === param.id) { 
+            isFilteredOk.push(true)
+          } else {
+            isFilteredOk.push(false)
+          }
+        }
+
+        // filtra por nome
+        const attributeName = item.attributes.nome.toUpperCase().indexOf(param.name.toUpperCase())
+
+        if (param.name !== '') {
+          if (attributeName > -1) { 
+            isFilteredOk.push(true)
+          } else {
+            isFilteredOk.push(false)
+          }
+        }
+        return isFilteredOk.indexOf(false) === -1
       })
 
       this.empresas = filteredList
     }
+
   }
 }
 </script>

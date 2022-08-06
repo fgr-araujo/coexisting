@@ -39,7 +39,7 @@ export class FiltroForm extends React.Component {
     return (
       <form onSubmit={this.state.handleSubmit}>
         <label>
-          Status: 
+          Status  
           <select
             defaultValue={this.state.status} 
             ref="status" 
@@ -64,8 +64,7 @@ export class FiltroForm extends React.Component {
           ref="id" 
           placeholder="Procure pelo ID"
           title="Digite o ID para buscar."/>
-
-        <input type="submit" value="Buscar" />
+        <button type="submit" value="Filtrar"><i className="fas fa-search"></i> Filtrar</button>
       </form>
     );
   }
